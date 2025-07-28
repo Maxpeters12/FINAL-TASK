@@ -1,0 +1,265 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: #fdfaf6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.announcement{
+    background-color: #c0392b;
+    padding: 15px;
+    width: 100%;
+    color: #EBEAEA;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.container .menu-section span{
+    color: #229954;
+}
+
+h1, h2, h3 {
+    color: #c0392b;
+}
+
+/* --- Menu Section --- */
+.menu-section {
+    flex: 3;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.food-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #eee; /* Placeholder color */
+}
+
+.food-card h3 {
+    margin: 10px 0 5px;
+}
+
+.food-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 10px;
+}
+
+.food-card .price {
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 1.1rem;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.quantity {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add-to-plate-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.add-to-plate-btn:hover {
+    background-color: #c0392b;
+}
+
+/* --- Cart Section --- */
+.cart-section {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #888;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.total-section {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.4rem;
+}
+
+.delivery-time {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 5px;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#submit-order-btn, #print-btn {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#submit-order-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+#submit-order-btn:hover {
+    background-color: #229954;
+}
+
+#print-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+#print-btn:hover {
+    background-color: #2980b9;
+}
+
+
+/* --- Loading Spinner --- */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #c0392b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Print Styling --- */
+@media print {
+    body {
+        padding: 0;
+        margin: 20px;
+    }
+    .menu-section, .cart-buttons, .delivery-time, .cart-item .remove-item-btn {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .cart-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        width: 100%;
+        position: static;
+    }
+}

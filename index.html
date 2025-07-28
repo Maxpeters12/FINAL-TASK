@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nigerian Food Ordering</title>
+</head>
+<body>
+
+    <header class="announcement">
+        <p>Onye-Ntachi, welcome to Naija sure plug for good food. Our food de sweet wetin no good guy!</p>
+    </header>
+
+    <main class="container">
+        <div class="menu-section">
+            <h1>CHOPlife<span>Naija</span></h1>
+            <div class="menu-grid">
+                <div class="food-card" data-id="1" data-name="Jollof Rice" data-price="1500">
+                    <img src="/IMAGES/jollof spicy.jpg" alt="Jollof Rice">
+                    <h3>Jollof Rice</h3>
+                    <p>A rich and incredibly tasty West African one-pot meal.</p>
+                    <p class="price">₦1500.00</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+                <div class="food-card" data-id="2" data-name="Egusi Soup" data-price="1800.50">
+                    <img src="/IMAGES/Egusi.jpg" alt="Egusi Soup">
+                    <h3>Egusi Soup</h3>
+                    <p>A savory soup made with ground melon seeds and leafy vegetables.</p>
+                    <p class="price">₦1800.50</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+                <div class="food-card" data-id="3" data-name="Akpu (Fufu)" data-price="3200">
+                    <img src="/IMAGES/What is fufu (foo-foo)_.jpg" alt="Akpu">
+                    <h3>Akpu (Fufu)</h3>
+                    <p>A soft, starchy swallow made from fermented cassava, perfect with any soup.</p>
+                    <p class="price">₦3200.00</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+                <div class="food-card" data-id="4" data-name="Suya" data-price="1500.50">
+                    <img src="/IMAGES/Suya from Nigeria.jpg" alt="Suya">
+                    <h3>Suya</h3>
+                    <p>Spicy skewered meat, a popular Nigerian street food delicacy.</p>
+                    <p class="price">₦1500.50</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+                <div class="food-card" data-id="5" data-name="Pounded Yam" data-price="2599">
+                    <img src="/IMAGES/pounded yam.jpg" alt="Pounded Yam">
+                    <h3>Pounded Yam</h3>
+                    <p>A smooth and stretchy dough, the king of swallows, served with soup.</p>
+                    <p class="price">₦2599.00</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+                <div class="food-card" data-id="6" data-name="Moi Moi" data-price="2999">
+                    <img src="/IMAGES/Moi Moi.jpg" alt="Moi Moi">
+                    <h3>Moi Moi</h3>
+                    <p>A steamed bean pudding made from a mixture of washed and peeled beans.</p>
+                    <p class="price">₦2999.00</p>
+                    <div class="card-actions">
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="add-to-plate-btn">Add to Plate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h2>Your Plate</h2>
+            <div id="cart-items">
+                <p class="empty-cart-message">Your plate is empty.</p>
+            </div>
+            <div class="total-section">
+                 <h3>Total: <span id="total-price">₦0</span></h3>
+            </div>
+            <div class="delivery-time">
+                <p>Estimated Delivery: <strong>25-40 mins</strong></p>
+            </div>
+            <div class="cart-buttons">
+                <button id="submit-order-btn">Submit Order</button>
+                <button id="print-btn">Print</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
